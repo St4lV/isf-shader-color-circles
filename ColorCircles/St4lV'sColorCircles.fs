@@ -63,10 +63,10 @@ void main() {
     vec2 uv = gl_FragCoord.xy / RENDERSIZE.xy;
     vec2 center = vec2(0.5, 0.5);
 
-    float aspectRatio = RENDERSIZE.x / RENDERSIZE.y;
-    uv.x *= aspectRatio * 0.5;
+    float aspectRatio = RENDERSIZE.x / RENDERSIZE.x;
+    uv.x *= aspectRatio;
 
-    float time = TIME * 2.0 + speed;
+    float time = TIME * 2.0 - speed;
     float cycleDuration = 1.0 / speed; 
     float phase = mod(time, cycleDuration * 3.0);
 
